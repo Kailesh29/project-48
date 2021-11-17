@@ -26,10 +26,10 @@ restartImg = loadImage("images/restart.png");
 heart1Img = loadImage("images/heart_1.png");
 heart2Img = loadImage("images/heart_2.png");
 heart3Img = loadImage("images/heart_3.png");
-dieSound = loadSound("images/die.mp3");
-jumpSound = loadSound("images/jump.mp3");
-explosionSound = loadSound("images/explosion.mp3");
-loseSound = loadSound("images/lose.mp3");
+//dieSound = loadSound("images/die.mp3");
+//jumpSound = loadSound("images/jump.mp3");
+//explosionSound = loadSound("images/explosion.mp3");
+//loseSound = loadSound("images/lose.mp3");
 }
 function setup() {
   createCanvas(1200,800);
@@ -107,7 +107,7 @@ function draw() {
     }
 
     if(life == 0) {
-      loseSound.play();
+     // loseSound.play();
       heart1.visible = false;
       heart3.visible = false;
       heart2.visible = false;
@@ -122,7 +122,7 @@ function draw() {
 
     if(keyDown(UP_ARROW) && kid.y > 500) {
       kid.velocityY = -14;
-      jumpSound.play();
+      //jumpSound.play();
     }
     kid.velocityY = kid.velocityY + 0.6;
   
@@ -136,7 +136,7 @@ function draw() {
     Bar();
 
    if(obstaclesGroup.isTouching(kid)) {
-    dieSound.play();
+    //dieSound.play();
    for(var i = 0; i< obstaclesGroup.length; i++) {
 
      if(obstaclesGroup[i].isTouching(kid)) {
@@ -150,7 +150,7 @@ function draw() {
    }
    if(topBarGroup.isTouching(kid)) {
     for(var i = 0; i< topBarGroup.length; i++) {
-      explosionSound.play();
+      //explosionSound.play();
       if(topBarGroup[i].isTouching(kid)) {
         obstaclesGroup[i].destroy();
         topBarGroup[i].destroy();
